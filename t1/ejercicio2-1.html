@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio2-1.html</title>
+</head>
+<body>
+    <p>¿En qué elemento de SVG se utiliza el atributo spreadMethod?</p>
+    <p>Se usa en los elementos linearGradient y radialGradient</p>
+    <p>Determina como se comportará el degradado cuando sale de su zona límite</p>
+    <ul>
+        <li>pad: El color no cambia al pasar del límite (por defecto).</li>
+        <li>reflect: El patrón se vuelve a repetir pero a la inversa.</li>
+        <li>repeat: El patrón se vuelve a repetir desde el principio.</li>
+    </ul>
+    <p>A continuación, un ejemplo de cada uno en ese mismo orden (pad, reflect, repeat)</p>
+    <svg width="512" height="512">
+        <defs>
+            <linearGradient id="degradadoPad" spreadMethod="pad" x1="33%" x2="67%">
+                <stop offset="0%" stop-color="red" />
+                <stop offset="50%" stop-color="green" />
+                <stop offset="100%" stop-color="blue" />
+            </linearGradient>
+            <linearGradient id="degradadoReflect" spreadMethod="reflect" x1="33%" x2="67%">
+                <stop offset="0%" stop-color="red" />
+                <stop offset="50%" stop-color="green" />
+                <stop offset="100%" stop-color="blue" />
+            </linearGradient>
+            <linearGradient id="degradadoRepeat" spreadMethod="repeat" x1="33%" x2="67%">
+                <stop offset="0%" stop-color="red" />
+                <stop offset="50%" stop-color="green" />
+                <stop offset="100%" stop-color="blue" />
+            </linearGradient>
+        </defs>
+        <rect y="0" fill="url(#degradadoPad)" width="512" height="40" />
+        <rect y="60" fill="url(#degradadoReflect)" width="512" height="40" />
+        <rect y="120" fill="url(#degradadoRepeat)" width="512" height="40" />
+    </svg>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio3-4.html</title>
+</head>
+<body>
+    <canvas style="border: 1px solid black" height="320" width="512" id="dibujo"></canvas>
+    <script>
+        const canvas = document.getElementById("dibujo");
+        const c = canvas.getContext("2d");
+        c.fillStyle = "rgba(90, 255, 0, 0.7)";
+        c.fillRect(64, 44, 128, 128);
+        c.fillStyle = "rgba(255, 0, 90, 0.7)";
+        c.fillRect(96, 76, 130, 130);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio2-7.html</title>
+</head>
+<body>
+    <svg width="512" height="512">
+        <defs>
+            <pattern id="patronImagen" width="32" height="32" patternUnits="userSpaceOnUse">
+                <image xlink:href="./patron.png" width="32" height="32" />
+            </pattern>
+            <pattern id="patronElementos" width="32" height="32" patternUnits="userSpaceOnUse">
+               <polygon points="10,1 4,19 19,7 1,7 16,19" style="fill:orange; stroke: cyan; stroke-width:1; fill-rule:nonzero;"/> 
+            </pattern>
+        </defs>
+        <circle cx="70" cy="100" r="70" stroke="#030" stroke-width="2" fill="url(#patronImagen)" />
+        <circle cx="260" cy="100" r="70" stroke="#030" stroke-width="2" fill="url(#patronElementos)" />
+    </svg>
+</body>
+</html>

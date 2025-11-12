@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio4-5.html</title>
+</head>
+<body>
+    <p>Es posible que el filtro no se aplique si se abre el .html directamente, en un servidor web (como VSCode con LiveServer si funciona)</p>
+    <canvas height="128" width="128" id="dibujo"></canvas>
+    <script>
+        window.onload = () => {
+            const canvas = document.getElementById("dibujo");
+            const c = canvas.getContext("2d");
+            let imagen = new Image();
+            imagen.src = "./shader.png";
+            imagen.onload = () => {
+                c.drawImage(imagen, 0, 0, 128, 128);
+                let datos = c.getImageData(0, 0, 128, 128);
+                let pixeles = datos.data;
+                for (let i = 0; i < pixeles.length; i += 4) {
+                    let tr = 0.393 * pixeles[i] + 0.769 * pixeles[i + 1] + 0.189 * pixeles[i + 2];
+                    let tg = 0.349 * pixeles[i] + 0.686 * pixeles[i + 1] + 0.168 * pixeles[i + 2];
+                    let tb = 0.272 * pixeles[i] + 0.534 * pixeles[i + 1] + 0.131 * pixeles[i + 2];
+                    tr = (tr > 255) ? 255 : tr;
+                    tg = (tg > 255) ? 255 : tg;
+                    tb = (tb > 255) ? 255 : tb;
+                    pixeles[i] = tr;
+                    pixeles[i + 1] = tg;
+                    pixeles[i + 2] = tb;
+                }
+                c.putImageData(datos, 0, 0);
+            };
+        }
+        
+    </script>
+</body>
+</html>

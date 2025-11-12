@@ -7,8 +7,8 @@
 </head>
 <body>
     <figure>
-        <video id="video1">
-            <source src="movie.mp4" type="video/mp4">
+        <video width="192" height="108" id="video1" autoplay>
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
             Video no soportado
         </video>
         <figcaption>
@@ -20,22 +20,31 @@
             <button id="subir-volumen">Subir Voluen (0.1 puntos)</button>
         </figcaption>
     </figure>
-    <p>poner tambien video 2 del final </p>
-
+    <figure>
+        <video width="192" height="108" id="video2" controls>
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4#t=2,7" type="video/mp4">
+            Video no soportado
+        </video>
+        <figcaption>
+            Segundo video
+        </figcaption>
+    </figure>
 
     <script>
             const video = document.getElementById("video1");
             let silenciado = false;
-            console.log(video);
+            video.play();
             document.getElementById("reiniciar").addEventListener("click", () => {
                 video.currentTime = 0;
                 video.play();
             });
             document.getElementById("retrasar").addEventListener("click", () => {
                 video.currentTime = Math.max(0, video.currentTime - 5);
+                video.play();
             });
             document.getElementById("adelantar").addEventListener("click", () => {
                 video.currentTime = Math.min(video.duration, video.currentTime + 5);
+                video.play();
             });
             const botonSilenciarEscuchar = document.getElementById("silenciar-escuchar");
             botonSilenciarEscuchar.addEventListener("click", (e) => {
