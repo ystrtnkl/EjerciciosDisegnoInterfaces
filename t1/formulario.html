@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario.html</title>
+</head>
+<body>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Introduce tus datos</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required autofocus pattern="^[A-Za-z\s]+$"><br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="El email debe ser válido."><br>
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" pattern="^(https?:\/\/)?([A-Za-z0-9-]+\.)+[A-Za-z]{2,}(:\d+)?(\/[^\s]*)?$" title="La URL debe ser válida."><br>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha"><br>
+            <label for="tiempo">Tiempo:</label>
+            <input type="time" id="tiempo" name="tiempo"><br>
+            <label for="nacimiento">Feca y hora de nacimiento:</label>
+            <input type="datetime-local" id="nacimiento" name="nacimiento"><br>
+            <label for="mes">Mes:</label>
+            <input type="month" id="mes" name="mes"><br>
+            <label for="semana">Semana:</label>
+            <input type="week" id="semana" name="semana"><br>
+            <label for="numero">Número (min -10, max 10):</label>
+            <input type="number" id="numero" name="numero" min="-10" max="10" step="1" value="0"><br>
+            <label for="intervalo">Intervalo (min 0, max 0):</label>
+            <input type="range" id="intervalo" name="intervalo" min="0" max="10" step="1" value="0" oninput="output.value = this.value">
+            <output id="output">0</output><br>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="^\d{9}$" title="Debe ser un número de 9 dígitos sin espacios."><br>
+            <label for="busqueda">Término de búsqueda:</label>
+            <input type="search" id="busqueda" name="busqueda"><br>
+            <label for="color">Color Favorito:</label>
+            <input type="color" id="color" name="color" value="#000000"><br>
+            <label for="precio">Selecciona el precio: </label>
+            <input type="range" id="precio" name="precio" min="5000" max="500000" step="100" value="250000">
+            <output class="output-precio" for="precio">5000,00 €</output><br>
+            <script>
+                const precioInput = document.getElementById('precio');
+                const precioOutput = document.querySelector('.output-precio');
+                precioInput.addEventListener('input', () => {
+                    precioOutput.textContent = Intl.NumberFormat('es-ES', {style: 'currency', currency: 'EUR'}).format(precioInput.value);
+                });
+            </script>
+            <input type="submit" value="¡Enviar!">
+        </fieldset>
+    </form>
+</body>
+</html>

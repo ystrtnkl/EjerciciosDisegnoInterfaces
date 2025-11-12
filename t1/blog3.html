@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <figure>
+        <video id="video1">
+            <source src="movie.mp4" type="video/mp4">
+            Video no soportado
+        </video>
+        <figcaption>
+            <button id="reiniciar">Reiniciar</button>
+            <button id="retrasar">Retrasar (5 segundos)</button>
+            <button id="adelantar">Adelantar (5 segundos)</button>
+            <button id="silenciar-escuchar">Silenciar</button>
+            <button id="bajar-volumen">Bajar Volumen (0.1 puntos)</button>
+            <button id="subir-volumen">Subir Voluen (0.1 puntos)</button>
+        </figcaption>
+    </figure>
+    <p>poner tambien video 2 del final </p>
+
+
+    <script>
+            const video = document.getElementById("video1");
+            let silenciado = false;
+            console.log(video);
+            document.getElementById("reiniciar").addEventListener("click", () => {
+                video.currentTime = 0;
+                video.play();
+            });
+            document.getElementById("retrasar").addEventListener("click", () => {
+                video.currentTime = Math.max(0, video.currentTime - 5);
+            });
+            document.getElementById("adelantar").addEventListener("click", () => {
+                video.currentTime = Math.min(video.duration, video.currentTime + 5);
+            });
+            const botonSilenciarEscuchar = document.getElementById("silenciar-escuchar");
+            botonSilenciarEscuchar.addEventListener("click", (e) => {
+                silenciado = !silenciado;
+                botonSilenciarEscuchar.innerHTML = silenciado ? "Escuchar" : "Silenciar";
+                video.muted = silenciado;
+            });
+            document.getElementById("bajar-volumen").addEventListener("click", () => {
+                video.volume = Math.max(0, video.volume - 0.1);
+            });
+            document.getElementById("subir-volumen").addEventListener("click", () => {
+                video.volume = Math.min(1, video.volume + 0.1);
+            });
+        </script>
+</body>
+</html>
