@@ -53,6 +53,9 @@ ul.notas li#nota3 {
 area:hover {
   cursor: pointer;
 }
+area {
+  z-index: 30;
+}
 
 </style>
 </head>
@@ -86,9 +89,9 @@ area:hover {
   <img src="./imagenesExtra/imagen1Hover.png" alt="Imagen Mapa 1 hover" width="200px" height="100px" id="img1hover">
   <img src="./imagenesExtra/imagen1.png" alt="Imagen Mapa 1" usemap="#mapa1" width="200px" height="100px" id="img1">
   <map name="mapa1" id="mapa1">
-    <area shape="circle" coords="" href="#" alt="Area1" id="mapa-1-area-1">
-    <area shape="rectangle" coords="" href="#" alt="Area2" id="mapa-1-area-2">
-    <area shape="poly" coords="" href="#" alt="Area3" id="mapa-1-area-3">
+    <area shape="rect" coords="0,0,100,50" href="#" alt="Area1" id="mapa-1-area-1">
+    <!--<area shape="rectangle" coords="" href="#" alt="Area2" id="mapa-1-area-2">
+    <area shape="poly" coords="" href="#" alt="Area3" id="mapa-1-area-3">-->
   </map>
 
   <h3>Mapa 2</h3>
@@ -99,18 +102,7 @@ area:hover {
     <area shape="poly" coords="" href="#" alt="Area3" id="mapa-2-area-3">
   </map>
   <p id="mensaje"></p>
-  <script>
-    document.onload = () => {
-      const mensaje = document.getElementById("mensaje");
-      [["1, 1", "1, 2", "1, 3"], ["2, 1", "2, 2", "2, 3"]].forEach((e, i) => {
-        e.forEach((ee, ii) => {
-          document.getElementById(`mapa-${i}-area-${ii}`).addEventListener("click", (ev) => {
-            mensaje.innerHTML = ee;
-          });
-        });
-      });
-    }
-  </script>
+  
 </div>
 
 
@@ -118,7 +110,27 @@ area:hover {
 
 
 
-
+<script>
+    //document.onload = () => {
+    console.log("afsjd");
+      const mensaje = document.getElementById("mensaje");
+      /*[["1, 1", "1, 2", "1, 3"], ["2, 1", "2, 2", "2, 3"]].forEach((e, i) => {
+        e.forEach((ee, ii) => {
+          document.getElementById(`mapa-${i}-area-${ii}`).addEventListener("click", (ev) => {
+            console.log("hola");
+            mensaje.innerHTML = ee;
+          });
+        });
+      });*/
+      document.getElementById("mapa-1-area-1").addEventListener("click", (e) => {
+        console.log(e, "aa");
+      });
+      document.getElementById("img1hover").addEventListener("click", (e) => {
+        console.log(e, "aa");
+      });
+      console.log("gg");
+    //}
+  </script>
 
 </body>
 </html>
