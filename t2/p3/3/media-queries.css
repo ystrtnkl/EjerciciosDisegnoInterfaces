@@ -1,0 +1,57 @@
+/*Escritorio*/
+@media (min-width: 1024px) {
+    #pagewrap {
+        width: 980px;
+        margin: auto;
+    }
+    #content {
+        width: 600px;
+        float: left;
+        margin: 15px;
+    }
+    #sidebar {
+        width: 280px;
+        float: right;
+        margin: 15px;
+    }
+    #header {
+        height: 160px;
+    }
+}
+
+/*Tablet/Intermedio*/
+@media (max-width: 1024px) {
+    #pagewrap {
+        width: 95%;
+    }
+    #content {
+        width: 60%;
+        float: left;
+        margin: 10px;
+    }
+    #sidebar {
+        width: 30%;
+        float: right;
+        margin: 10px;
+    }
+}
+
+/*Móvil*/
+@media (max-width: 650px) {
+    #content {
+        width: auto;
+        float: none;
+    }
+    #sidebar {
+        width: auto;
+        float: none;
+    }
+    /*Extra, para cumplir con el estilo:*/
+    #searchform {
+        bottom: 150px;
+    }
+    footer, footer p {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}

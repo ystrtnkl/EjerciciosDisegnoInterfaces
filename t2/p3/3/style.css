@@ -1,0 +1,94 @@
+/*Estilo general para todos los tamaños de pantalla (colores, imágenes, tipografías, etc...)*/
+
+* {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: url("./images/body-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+}
+
+h1, h2, h1 a {
+    color: white;
+}
+#site-description {
+    font-style: italic;
+    font-size: 1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#header nav {
+    /*Se usa un degradado porque la imágen proporcionada "./images/nav-bar-bg.png" no corresponde con el diseño a seguir*/
+    background: linear-gradient(to right, rgb(85, 85, 85), lightgray);
+    background-repeat: repeat-y;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 -1px white;
+    border: 1px solid rgb(103, 103, 103);
+    margin: 15px;
+}
+#main-nav li {
+    display: inline;
+    margin: 10px;
+}
+#main-nav li a {
+    color: white;
+    text-shadow: 0 -1px black;
+}
+#searchform {
+    position: relative;
+    bottom: 50px;
+    left: 75%;
+    height: 20px;
+}
+#searchform input {
+    width: 20%;
+}
+
+#content, #sidebar {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid slategray;
+}
+article, section {
+    padding: 15px;
+}
+#content h1 a {
+    color: black;
+}
+#content h1, h4 {
+    margin: 5px;
+}
+.post-image img {
+    width: 100%;
+    margin: 0;
+}
+.post-image {
+    margin: 0;
+}
+#content article p {
+    color: rgb(67, 67, 67);
+    font-size: 0.7em;
+    line-height: 22px;
+    margin-bottom: 25px;
+}
+
+footer {
+    color: white;
+    clear: both;
+    padding: 15px;
+}
+#sidebar li {
+    border-top: 1px solid rgb(209, 209, 209);
+    margin-top: 5px;
+    padding: 5px;
+    color: rgb(85, 85, 85);
+    font-size: 0.7em;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
