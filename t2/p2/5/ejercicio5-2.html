@@ -40,22 +40,32 @@ ul.notas li#nota3 {
   width: 60px; height: 60px; top: 200px; left: 150px;
 }
 
-/*Esto para los nuevos mapas*/
-#img1hover, #img2hover {
-  opacity: 0;
-  z-index: 20;
-  position:fixed
+
+/*Nuevo CSS para los otros dos mapas*/
+.img-personalizada {
+  width: 400px;
+  height: 200px;
 }
-#img1hover:hover, #img2hover:hover {
-  display: block;
-  opacity: 1;
+ul.notas li#nota4 {
+  width: 140px; height: 110px; top: 130px; left: 345px;
 }
-area:hover {
-  cursor: pointer;
+ul.notas li#nota5 {
+  width: 30px; height: 200px; top: 10px; left: 10px;
 }
-area {
-  z-index: 30;
+ul.notas li#nota6 {
+  width: 60px; height: 60px; top: 200px; left: 150px;
 }
+ul.notas li#nota7 {
+  width: 140px; height: 110px; top: 130px; left: 345px;
+}
+ul.notas li#nota8 {
+  width: 30px; height: 200px; top: 10px; left: 10px;
+}
+ul.notas li#nota9 {
+  width: 60px; height: 60px; top: 200px; left: 150px;
+}
+
+
 
 </style>
 </head>
@@ -76,60 +86,31 @@ area {
 
 
 
+<h2>Dos nuevos mapas de imagen</h2>
+
+<div class="mapa_imagen">
+  <img class="img-personalizada" src="./imagenesExtra/imagen1.png" />
+
+  <ul class="notas">
+    <li id="nota4"><p>Pollito solitario</p></li>
+    <li id="nota5"><p>Pollitos juntos</p></li>
+    <li id="nota6"><p>Pollito observador</p></li>
+  </ul>
+</div>
+
+
+<div class="mapa_imagen">
+  <img class="img-personalizada" src="./imagenesExtra/imagen2.png" />
+
+  <ul class="notas">
+    <li id="nota7"><p>Pollito solitario</p></li>
+    <li id="nota8"><p>Pollitos juntos</p></li>
+    <li id="nota9"><p>Pollito observador</p></li>
+  </ul>
+</div>
 
 
 
-  <h2>Dos nuevos mapas de imagen</h2>
-
-  <style>
-    
-  </style>
-
-  <h3>Mapa 1</h3>
-  <img src="./imagenesExtra/imagen1Hover.png" alt="Imagen Mapa 1 hover" width="200px" height="100px" id="img1hover">
-  <img src="./imagenesExtra/imagen1.png" alt="Imagen Mapa 1" usemap="#mapa1" width="200px" height="100px" id="img1">
-  <map name="mapa1" id="mapa1">
-    <area shape="rect" coords="0,0,100,50" href="#" alt="Area1" id="mapa-1-area-1">
-    <!--<area shape="rectangle" coords="" href="#" alt="Area2" id="mapa-1-area-2">
-    <area shape="poly" coords="" href="#" alt="Area3" id="mapa-1-area-3">-->
-  </map>
-
-  <h3>Mapa 2</h3>
-  <img src="" alt="Imagen Mapa 2" usemap="#mapa2" width="200px" height="100px" id="img2">
-  <map name="mapa2" id="mapa2">
-    <area shape="circle" coords="" href="#" alt="Area1" id="mapa-2-area-1">
-    <area shape="rectangle" coords="" href="#" alt="Area2" id="mapa-2-area-2">
-    <area shape="poly" coords="" href="#" alt="Area3" id="mapa-2-area-3">
-  </map>
-  <p id="mensaje"></p>
-
-
-
-
-
-
-
-<script>
-    //document.onload = () => {
-    console.log("afsjd");
-      const mensaje = document.getElementById("mensaje");
-      /*[["1, 1", "1, 2", "1, 3"], ["2, 1", "2, 2", "2, 3"]].forEach((e, i) => {
-        e.forEach((ee, ii) => {
-          document.getElementById(`mapa-${i}-area-${ii}`).addEventListener("click", (ev) => {
-            console.log("hola");
-            mensaje.innerHTML = ee;
-          });
-        });
-      });*/
-      document.getElementById("mapa-1-area-1").addEventListener("click", (e) => {
-        console.log(e, "aa");
-      });
-      document.getElementById("img1hover").addEventListener("click", (e) => {
-        console.log(e, "aa");
-      });
-      console.log("gg");
-    //}
-  </script>
 
 </body>
 </html>
