@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(32, 32, 32);
+    color: rgb(156, 156, 156);
+}
+
+div {
+    margin: 10px;
+}
+
+#gridGaps p {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#cuadricula {
+    border: 1px solid gray;
+    height: 400px;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: var(--distanciaRow, 4px) var(--distanciaColumn, 8px); /*Usa las variables en el style en línea de la etiqueta, si no están presentes usa esos otros valores*/
+    grid-auto-flow: column;
+}
+
+.item {
+    background-color: var(--color);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    align-content: center;
+    margin: 0;
+}

@@ -1,0 +1,39 @@
+.wrapper {
+    display: grid;
+    width: 950px;
+    height: 630px;
+    grid-gap: 10px;
+    font-size: 1.5em;
+    /*6 columnas x 4 filas = 24 celdas*/
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "a a b b e e"
+                         "a a b b e e"
+                         "c c d d e e"
+                         "c c d d e e";
+}
+
+.box {
+    border: 1px solid gray;
+    padding: 15px;
+}
+
+.a {
+    align-self: stretch;
+    grid-area: a;
+}
+.b {
+    align-self: end;
+    grid-area: b;
+}
+.c {
+    align-self: start;
+    grid-area: c;
+}
+.d {
+    align-self: center;
+    grid-area: d;
+}
+.e {
+    grid-area: e;
+}

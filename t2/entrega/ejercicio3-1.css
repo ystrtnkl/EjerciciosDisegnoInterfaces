@@ -1,0 +1,86 @@
+#wrapper {
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+#wrapper div {
+    border: 1px solid gray;
+    margin: 2px;
+}
+
+#header {
+    height: 180px;
+}
+#content {
+    background-color: rgb(241, 241, 241);
+    width: 600px;
+    min-height: 600px;
+    float: left;
+}
+#sidebar {
+    background-color: rgb(241, 241, 241);
+    align-self: start;
+    width: 300px;
+    padding-right: 40px;
+    padding-bottom: 100px;
+    float: right;
+}
+#footer {
+    clear: both;
+}
+
+h1, h2, h3, h4 {
+    /*No se exactamente que tipo de fuente es, así que puse esta*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+
+@media (max-width: 980px) {
+    #wrapper {
+        width: 94%;
+    }
+    #content {
+        width: 65%;
+    }
+    #sidebar {
+        width: 30%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    #wrapper {
+        display: block;
+    }
+    #content {
+        width: auto;
+        float: none;
+    }
+    #sidebar {
+        width: auto;
+        float: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #header {
+        height: auto;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    #sidebar {
+        display: none;
+    }
+}
+
+/*Meda query extra, pensado para pantallas grandes o de alta resolución*/
+@media (min-width: 1200px) {
+    #content {
+        width: 65%;
+    }
+    #sidebar {
+        width: 30%;
+    }
+}
