@@ -1,0 +1,37 @@
+$color-principal: #FF8000;
+$color-secundario: #2E5F64;
+
+@mixin configuracion-texto($color, $tamagno-fuente, $margen-interno) {
+    color: $color;
+    font-size: $tamagno-fuente;
+    padding: $margen-interno;
+}
+
+div {
+    &#primero {
+        p.destacado {
+            @include configuracion-texto($color-principal, 1.6rem, 6px);
+            text-align: center;
+        }
+    }
+
+    &#segundo {
+        p:not(.destacado)::first-line {
+            font-style: italic;
+        }
+        p.destacado {
+            text-decoration: underline;
+            @include configuracion-texto($color-secundario, 1.4rem, 5px);
+        }
+    }
+
+    padding: 20px;
+
+    &#parrafos {
+        text-align: right;
+    }
+}
+
+p { /*Esta última línea no se especificaba en el pdf, pero se añadió para que se parezca más a la imágen´*/
+    margin: 0;
+}
