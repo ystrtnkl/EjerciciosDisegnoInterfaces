@@ -1,0 +1,28 @@
+@charset "UTF-8";
+div#primero p.destacado {
+  color: #FF8000;
+  font-size: 1.6rem;
+  padding: 6px;
+  text-align: center;
+}
+div#segundo p:not(.destacado)::first-line {
+  font-style: italic;
+}
+div#segundo p.destacado {
+  text-decoration: underline;
+  color: #2E5F64;
+  font-size: 1.4rem;
+  padding: 5px;
+}
+div {
+  padding: 20px;
+}
+div#parrafos {
+  text-align: right;
+}
+
+p { /*Esta última línea no se especificaba en el pdf, pero se añadió para que se parezca más a la imágen´*/
+  margin: 0;
+}
+
+/*# sourceMappingURL=screen.css.map */
